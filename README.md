@@ -35,8 +35,8 @@
 | select * from player where level > (select AVG(level) from player);                           | 查询大于平均等级的玩家 |
 | select level,(select AVG(level) from player) from player;                                     | 查询等级和平均等级 |
 | create index index_name on player(name);                                                      | 创建索引          |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
+| drop index index_name on player;                                                              | 删除索引          |
+| show index from player;                                                                       | 查询索引          |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |

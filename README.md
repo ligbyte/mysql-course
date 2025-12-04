@@ -31,10 +31,10 @@
 | mysql -u root -p game < backup.sql                                                            | 数据库导入(CMD终端执行) |
 | mysqldump -u root -p game player > player.sql                                                 | 单张表导出(CMD终端执行) |
 | mysql -u root -p db_name < player.sql                                                         | 单张表导入(CMD终端执行) |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
+| select AVG(level) from player;                                                                | 计算平均等级            |
+| select * from player where level > (select AVG(level) from player);                           | 查询大于平均等级的玩家 |
+| select level,(select AVG(level) from player) from player;                                     | 查询等级和平均等级 |
+| create index index_name on player(name);                                                      | 创建索引          |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |

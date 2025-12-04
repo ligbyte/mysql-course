@@ -1,7 +1,5 @@
 # README
 
-_Read this in other languages:_
-[_English_](README.en-US.md)
 
 * MySQL常用数据类型(数值、字符串、日期时间、JSON类型、空间类型)
 
@@ -12,26 +10,27 @@ _Read this in other languages:_
 |  -----               | ----- |
 | mysql -u root -p    (mysql -h 127.0.0.1 -P 3306 -u root -p"123456" --ssl-mode=DISABLED  game) | 登录数据库                          |
 | show databases;                                                                               | 显示数据库                          |
-| create database game;                                                                         | 创建数据库                         |
-| drop database game;                                                                           | 删除数据库                        |
-| use game;                                                                                     | 选择数据库                         |
+| create database game;                                                                         | 创建数据库                          |
+| drop database game;                                                                           | 删除数据库                          |
+| use game;                                                                                     | 选择数据库                          |
 | create table player(id INT, name VARCHAR(20), level INT,exp INT, gold DECIMAL(10,2));         | 创建表                              |
 | drop table player;                                                                            | 删除表                              |
-| show tables;                                                                                  | 显示表:                              |
-| desc player;                                                                                  | 查看表结构                          |
-| alter table player modify column name varchar(200);                                           | 表: 修改表字段name长度                |
-| alter table player rename column name to nick_name;                                           | 表: 重命名字段 (mysql 8.0.21) |
-| alter table player change name nick_name varchar(100);                                        | 表: 重命名字段 (mysql 5.7.44)  |
-| ALTER TABLE player ADD COLUMN last_login DATETIME;                                            | 表: 添加字段 |
-| alter table player drop column last_login;                                                    | 表: 删除字段 |
-| insert into player(id,nick_name,level,exp) values (1,"lime",190,10000);                       | 增          |
-| 单元格                                                                                         | 删          |
-| update player set level = 200 where name = "jun";                                             | 改          |
-| select * from player;                                                                         | 查          |
-| alter table player modify level int default 1;                                                | 表:修改默认值 |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
-| 单元格                                                                                         | 单元格 |
+| show tables;                                                                                  | 显示表                              |
+| desc player;                                                                                  | 查看表结构                           |
+| alter table player modify column name varchar(200);                                           | 表: 修改表字段name长度               |
+| alter table player rename column name to nick_name;                                           | 表: 重命名字段 (mysql 8.0.21)       |
+| alter table player change name nick_name varchar(100);                                        | 表: 重命名字段 (mysql 5.7.44)       |
+| ALTER TABLE player ADD COLUMN last_login DATETIME;                                            | 表: 添加字段    |
+| alter table player drop column last_login;                                                    | 表: 删除字段    |
+| insert into player(id,nick_name,level,exp) values (1,"lime",190,10000);                       | 增             |
+| delete from player where level = 1;                                                           | 删             |
+| update player set level = 200 where name = "jun";                                             | 改             |
+| select * from player;                                                                         | 查             |
+| alter table player modify level int default 1;                                                | 表:修改默认值   |
+| mysqldump -u root -p --databases game > backup.sql                                            | 数据库导出(CMD终端执行) |
+| mysql -u root -p game < backup.sql                                                            | 数据库导入(CMD终端执行) |
+| mysqldump -u root -p game player > player.sql                                                 | 单张表导出(CMD终端执行) |
+| mysql -u root -p db_name < player.sql                                                         | 单张表导入(CMD终端执行) |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |
 | 单元格                                                                                         | 单元格 |

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF 预览</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .pdf-container {
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="pdf-container">
+    <iframe src="./MySQL操作手册.pdf" title="PDF 预览"></iframe>
+  </div>
+
+  <script>
+    // 可选：处理加载失败的情况
+    const iframe = document.querySelector('iframe');
+    iframe.addEventListener('load', () => {
+      console.log('PDF 加载完成');
+    });
+    // 注意：iframe 无法捕获 PDF 加载错误（浏览器限制）
+  </script>
+</body>
+</html>
